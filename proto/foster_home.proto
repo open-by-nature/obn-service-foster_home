@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package Obn.Service.FosterHome;
+
+option ruby_package = "Obn::Service::FosterHome";
+
+import "google/protobuf/empty.proto";
+
+service FosterHomeService {
+    rpc get(google.protobuf.Empty) returns (FosterHome);
+    rpc save(FosterHome) returns (google.protobuf.Empty);
+}
+
+message FosterHome {
+    string name = 1;
+    string address = 2;
+    string city = 3;
+    string postalCode = 4;
+    string state = 5;
+    string phoneNumber = 6;
+    string eMail = 7;
+}
+

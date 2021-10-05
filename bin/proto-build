@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd .
+grpc_tools_ruby_protoc -Iproto --ruby_out=$1 --grpc_out=$1 $2
