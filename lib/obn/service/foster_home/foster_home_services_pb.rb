@@ -2,7 +2,7 @@
 # Source: fosterHome.proto for package 'Obn.Service.FosterHome'
 
 require 'grpc'
-require 'fosterHome_pb'
+require_relative 'foster_home_pb'
 
 module Obn
   module Service

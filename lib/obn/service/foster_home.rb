@@ -9,15 +9,15 @@ module Obn
       
       class Service < Obn::Service::FosterHome::FosterHomeService::Service
         def get(empty, _unused_call)
-          Obn::Service::FosterHome::FosterHome.new(
-            name: 'Test'
-            , address: 'Address 1'
-            , city: 'City 1'
-            , postalCode: '00000'
-            , state: 'State 1'
-            , phoneNumber: '000.00.00.00'
-            , eMail: 'a@b.c'
-          )
+          foster_home = Obn::Service::FosterHome::FosterHome.new
+          foster_home.name = 'Test'
+          foster_home.address = 'Address 1'
+          foster_home.city = 'City 1'
+          foster_home.postalCode = '00000'
+          foster_home.state = 'State 1'
+          foster_home.phoneNumber = '000.00.00.00'
+          foster_home.eMail = 'a@b.c'
+          foster_home
         end
       end
     end

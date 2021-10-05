@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require 'obn/service/foster_home/foster_home_services_pb'
+require 'grpc'
 require 'obn/service/foster_home'
 
 class FosterHomeServer
