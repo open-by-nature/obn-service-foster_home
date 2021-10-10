@@ -7,17 +7,23 @@ option ruby_package = "Obn::Service::FosterHome";
 import "google/protobuf/empty.proto";
 
 service FosterHomeService {
-    rpc get(google.protobuf.Empty) returns (FosterHome);
+    rpc get(FosterHomeRequest) returns (FosterHome);
     rpc save(FosterHome) returns (google.protobuf.Empty);
 }
 
+message FosterHomeRequest {
+    int64 id = 1;
+    string filter = 2;
+}
+
 message FosterHome {
-    string name = 1;
-    string address = 2;
-    string city = 3;
-    string postalCode = 4;
-    string state = 5;
-    string phoneNumber = 6;
-    string eMail = 7;
+    int64 id = 1;
+    string name = 2;
+    string address = 3;
+    string city = 4;
+    string postalCode = 5;
+    string state = 6;
+    string phoneNumber = 7;
+    string eMail = 8;
 }
 

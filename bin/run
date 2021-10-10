@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd .
+bundle exec ruby start_server.rb

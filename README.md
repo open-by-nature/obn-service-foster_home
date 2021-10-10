@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'obn-service-fosterhome'
+gem 'obn-service-foster_home'
 ```
 
 And then execute:
@@ -22,7 +22,35 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Create DB
+
+```shell
+rake db:create
+```
+
+### New migration
+
+```shell
+rake db:new_migration name=<name>
+```
+
+### Migrate
+
+```shell
+rake db:migrate
+```
+
+### Test
+
+```shell
+bundle rake spec
+```
+
+### Run
+
+```shell
+
+```
 
 ## Development
 

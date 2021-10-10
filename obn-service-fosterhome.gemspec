@@ -29,6 +29,11 @@ Gem::Specification.new do |spec|
   
   spec.add_development_dependency "bundler", "~> 2.1.4"
   spec.add_development_dependency "rake", "~> 13.0.1"
+  spec.add_development_dependency "standalone_migrations"
+  spec.add_dependency "dotenv"
   spec.add_dependency "grpc"
   spec.add_dependency "grpc-tools"
+  spec.add_dependency "pg"
+  spec.add_dependency "activerecord"
+  spec.add_dependency "logging"
 end

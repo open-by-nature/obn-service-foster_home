@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd .
+bundle exec rake db:new_migration name=$1
