@@ -3,12 +3,15 @@
 
 require 'google/protobuf'
 
-require 'google/protobuf/empty_pb'
+require 'google/protobuf/any_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("foster_home.proto", :syntax => :proto3) do
     add_message "Obn.Service.FosterHome.FosterHomeRequest" do
       optional :id, :int64, 1
-      optional :filter, :string, 2
+    end
+    add_message "Obn.Service.FosterHome.FosterHomeSearchRequest" do
+      optional :filter, :string, 1
+      repeated :values, :message, 2, "google.protobuf.Any"
     end
     add_message "Obn.Service.FosterHome.FosterHome" do
       optional :id, :int64, 1
@@ -20,6 +23,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :phoneNumber, :string, 7
       optional :eMail, :string, 8
     end
+    add_message "Obn.Service.FosterHome.FosterHomeSearchResult" do
+      repeated :homes, :message, 1, "Obn.Service.FosterHome.FosterHome"
+    end
+    add_message "Obn.Service.FosterHome.FosterHomeDeleteResult" do
+      optional :deleted, :bool, 1
+    end
   end
 end
 
@@ -27,7 +36,10 @@ module Obn
   module Service
     module FosterHome
       FosterHomeRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Obn.Service.FosterHome.FosterHomeRequest").msgclass
+      FosterHomeSearchRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Obn.Service.FosterHome.FosterHomeSearchRequest").msgclass
       FosterHome = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Obn.Service.FosterHome.FosterHome").msgclass
+      FosterHomeSearchResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Obn.Service.FosterHome.FosterHomeSearchResult").msgclass
+      FosterHomeDeleteResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Obn.Service.FosterHome.FosterHomeDeleteResult").msgclass
     end
   end
 end

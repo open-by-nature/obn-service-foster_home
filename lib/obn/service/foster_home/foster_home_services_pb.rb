@@ -17,7 +17,9 @@ module Obn
           self.service_name = 'Obn.Service.FosterHome.FosterHomeService'
 
           rpc :get, ::Obn::Service::FosterHome::FosterHomeRequest, ::Obn::Service::FosterHome::FosterHome
-          rpc :save, ::Obn::Service::FosterHome::FosterHome, ::Google::Protobuf::Empty
+          rpc :search, ::Obn::Service::FosterHome::FosterHomeSearchRequest, ::Obn::Service::FosterHome::FosterHomeSearchResult
+          rpc :save, ::Obn::Service::FosterHome::FosterHome, ::Obn::Service::FosterHome::FosterHome
+          rpc :delete, ::Obn::Service::FosterHome::FosterHome, ::Obn::Service::FosterHome::FosterHomeDeleteResult
         end
 
         Stub = Service.rpc_stub_class

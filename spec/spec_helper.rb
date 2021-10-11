@@ -8,6 +8,9 @@ require 'active_record'
 require 'dotenv'
 require 'yaml'
 require 'erb'
+require 'google/protobuf'
+require 'google/protobuf/wrappers_pb'
+require 'google/protobuf/well_known_types'
 
 def db_configuration
   db_configuration_file_path = File.join(File.expand_path('..', __dir__), 'db', 'config.yml')
@@ -26,7 +29,7 @@ def start_server
   Thread.abort_on_exception = true
   server_thread = Thread.new do
     begin
-      @server.run_till_terminated
+      @server.run_till_terminated_or_interrupted([1, 'int', 'SIGQUIT'])
     rescue SystemExit, Interrupt
       @server.stop
       p 'Server stopped'

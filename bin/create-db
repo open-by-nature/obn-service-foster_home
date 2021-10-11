@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd .
-bundle exec rake db:create
+rake db:create

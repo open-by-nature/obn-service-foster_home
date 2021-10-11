@@ -43,13 +43,13 @@ rake db:migrate
 ### Test
 
 ```shell
-bundle rake spec
+rake spec
 ```
 
 ### Run
 
 ```shell
-
+bundle exec ruby start_server.rb
 ```
 
 ## Development
